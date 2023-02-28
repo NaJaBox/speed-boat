@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80vw;
+  height: 100vh;
+  display: flex;
+  position: absolute;
+  overflow: hidden;
+}
+
+#canvas1 {
+  width: 100%;
+  height: 45%;
+  z-index: 11;
+}
+
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.sky,
+.water1,
+.boat,
+.lightHolder,
+.water2 {
+  display: flex;
+  width: 101%;
+  height: 110%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.water1 img {
+  animation: water1 5.5s ease-in-out infinite;
+}
+
+.water2 {
+  z-index: 12;
+
+  img {
+    animation: water1 4s ease-in-out infinite;
+  }
+}
+
+.boat {
+  align-items: center;
+  justify-content: center;
+  z-index: 11;
+
+  img {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 30%;
+    animation: boat 3s ease-out infinite;
+  }
+}
+
+.lightHolder {
+  justify-content: center;
+  top: 0;
+  left: 0;
+  animation: boat 3s ease-out infinite;
+  z-index: 10;
+
+  .light {
+    position: relative;
+    left: -11.1vw;
+    top: 44vh;
+    width: 1vmax;
+    height: 1vmax;
+    animation: light 350ms infinite;
+    background-color: red;
+  }
+}
+
+@keyframes boat {
+  0%,
+  100% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(15px);
+    transform: rotate(-1deg);
+  }
+}
+
+@keyframes light {
+  0%,
+  100% {
+    background-color: red;
+  }
+
+  50% {
+    background-color: blue;
+  }
+}
+
+@keyframes water1 {
+  0%,
+  100% {
+    transform: rotate(1deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes water2 {
+  0%,
+  100% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+}

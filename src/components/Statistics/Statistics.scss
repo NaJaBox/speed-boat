@@ -1,0 +1,13 @@
+.speed,
+.distance,
+.gear {
+  width: 15vmax;
+  height: 5.5vmax;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  filter: drop-shadow(0 0 0.75rem rgb(107, 97, 128));
+  background-color: #37392399;
+  border-radius: 1.2vmax 0;
+}
